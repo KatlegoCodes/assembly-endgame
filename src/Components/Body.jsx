@@ -3,7 +3,7 @@ import { languages } from "../languages.js";
 import { useState } from "react";
 
 const Body = () => {
-  const [currentWord, setCurrentWord] = useState("REACT");
+  const [currentWord, setCurrentWord] = useState("JAVASCRIPT");
 
   return (
     <div>
