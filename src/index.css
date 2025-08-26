@@ -108,6 +108,12 @@ section.keyboard > button:hover {
     font-weight: 600;
 }
 
+section.keyboard > button:active {
+    background-color: #fabe6f;
+    border: 1px solid #cecece;
+    font-weight: 400;
+}
+
 button.new-game {
     background-color: #11B5E5;
     border: 1px solid #D7D7D7;

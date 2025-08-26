@@ -2,9 +2,20 @@ import { useState } from "react";
 import { languages } from "./languages";
 
 export default function AssemblyEndgame() {
-  const [currentWord, setCurrentWord] = useState("react");
+  const [currentWord, setCurrentWord] = useState("typescript");
+
+  const [guessedLetters, setGuessedLetters] = useState([]);
+  console.log(guessedLetters);
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  const handleClick = (letter) => {
+    return setGuessedLetters((prevGuessedLetters) => {
+      return prevGuessedLetters.includes(letter)
+        ? prevGuessedLetters
+        : [...prevGuessedLetters, letter];
+    });
+  };
 
   const languageElements = languages.map((lang) => {
     const styles = {
@@ -22,9 +33,11 @@ export default function AssemblyEndgame() {
     .split("")
     .map((letter, index) => <span key={index}>{letter.toUpperCase()}</span>);
 
-  const keyboardElements = alphabet
-    .split("")
-    .map((letter) => <button key={letter}>{letter.toUpperCase()}</button>);
+  const keyboardElements = alphabet.split("").map((letter) => (
+    <button key={letter} onClick={() => handleClick(letter)}>
+      {letter.toUpperCase()}
+    </button>
+  ));
 
   return (
     <main>
