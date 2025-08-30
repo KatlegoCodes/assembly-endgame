@@ -114,6 +114,16 @@ section.keyboard > button:active {
     font-weight: 400;
 }
 
+section.keyboard > button.correct {
+    background-color: #10A95B;
+    border: 1px solid #D7D7D7;
+}
+
+section.keyboard > button.wrong {
+    background-color: #EC5D49;
+    border: 1px solid #D7D7D7;
+}
+
 button.new-game {
     background-color: #11B5E5;
     border: 1px solid #D7D7D7;
@@ -133,4 +143,11 @@ button.new-game {
   button.new-game:hover {
     background-color: #0e97c0;
     transform: scale(1.05);
+    border: 2px solid #115568;
+  }
+
+  button.new-game:active {
+    background-color: #65c1dd;
+    color: white;
+    border: 2px solid #0e4e5b;
   }
