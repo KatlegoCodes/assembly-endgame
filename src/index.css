@@ -116,12 +116,12 @@ section.keyboard > button:active {
 
 section.keyboard > button.correct {
     background-color: #10A95B;
-    border: 1px solid #D7D7D7;
+    border: 2px solid #0a773e;
 }
 
 section.keyboard > button.wrong {
     background-color: #EC5D49;
-    border: 1px solid #D7D7D7;
+    border: 2px solid #be3320;
 }
 
 button.new-game {
