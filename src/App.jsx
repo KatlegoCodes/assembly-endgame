@@ -3,10 +3,18 @@ import { languages } from "./languages";
 import { clsx } from "clsx";
 
 export default function AssemblyEndgame() {
+  //State Values
   const [currentWord, setCurrentWord] = useState("typescript");
-
   const [guessedLetters, setGuessedLetters] = useState([]);
 
+  //Derived Values
+  const wrongGuessCount = guessedLetters.filter((letter) => {
+    return !currentWord.includes(letter);
+  }).length;
+
+  console.log(wrongGuessCount);
+
+  //Static Values
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   const handleClick = (letter) => {
