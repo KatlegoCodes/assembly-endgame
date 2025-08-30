@@ -12,7 +12,9 @@ export default function AssemblyEndgame() {
     return !currentWord.includes(letter);
   }).length;
 
-  console.log(wrongGuessCount);
+  wrongGuessCount === 8
+    ? window.alert("Game Over!")
+    : console.log("Wrong guesses:", wrongGuessCount);
 
   //Static Values
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
