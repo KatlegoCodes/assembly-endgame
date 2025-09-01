@@ -12,9 +12,13 @@ export default function AssemblyEndgame() {
     return !currentWord.includes(letter);
   }).length;
 
-  wrongGuessCount === 8
-    ? window.alert("Game Over!")
-    : console.log("Wrong guesses:", wrongGuessCount);
+  const isGameWon = currentWord.split("").every((letter) => {
+    return guessedLetters.includes(letter);
+  });
+
+  const isGameLost = wrongGuessCount >= languages.length - 1;
+
+  const isGameOver = isGameWon || isGameLost;
 
   //Static Values
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -27,13 +31,17 @@ export default function AssemblyEndgame() {
     });
   };
 
-  const languageElements = languages.map((lang) => {
+  const languageElements = languages.map((lang, index) => {
+    const isLanguagelost = index < wrongGuessCount;
     const styles = {
       backgroundColor: lang.backgroundColor,
       color: lang.color,
     };
+
+    const className = clsx("chip", isLanguagelost && "lost");
+
     return (
-      <span className="chip" style={styles} key={lang.name}>
+      <span className={className} style={styles} key={lang.name}>
         {lang.name}
       </span>
     );
@@ -83,7 +91,7 @@ export default function AssemblyEndgame() {
       <section className="language-chips">{languageElements}</section>
       <section className="word">{letterElements}</section>
       <section className="keyboard">{keyboardElements}</section>
-      <button className="new-game">New Game</button>
+      {isGameOver && <button className="new-game">New Game</button>}
     </main>
   );
 }
