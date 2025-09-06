@@ -37,6 +37,7 @@ header > p {
 section.game-status {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: #F9F4DA;
     min-height: 60px;
@@ -50,6 +51,13 @@ section.game-status > p {
     margin: 5px;
 }
 
+
+section.game-status > p.farewell-message {
+    margin: 5px;
+    font-style: italic;
+    font-weight: 400;
+}
+
 section.game-status > h2 {
     font-size: 1.25rem;
     margin: 5px
@@ -61,6 +69,11 @@ section.game-status.won {
 
 section.game-status.lost {
     background-color: #be3320;
+}
+
+section.game-status.farewell {
+    background-color: #7A5EA7;
+    border: 1px dashed #323232;
 }
 
 section.language-chips {
