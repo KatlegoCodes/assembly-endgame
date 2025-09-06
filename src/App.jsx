@@ -73,6 +73,9 @@ export default function AssemblyEndgame() {
       <button
         className={className}
         key={letter}
+        disabled={isGameOver}
+        aria-label={letter}
+        aria-pressed={isGuessed}
         onClick={() => handleClick(letter)}
       >
         {letter.toUpperCase()}
