@@ -9,6 +9,8 @@ export default function AssemblyEndgame() {
   const [guessedLetters, setGuessedLetters] = useState([]);
 
   //Derived Values
+  const numGuessesLeft = languages.length - 1;
+
   const wrongGuessCount = guessedLetters.filter((letter) => {
     return !currentWord.includes(letter);
   }).length;
